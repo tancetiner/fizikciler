@@ -7,6 +7,7 @@ A simple 2D game built with python using the module "Pygame".
 * [Introduction](#introduction)
 * [Installation](#installation)
 * [Dependencies](#dependencies)
+* [Screenshots](#screenshots)
 
 
 ### Introduction
@@ -21,3 +22,19 @@ You can download the project as zip and run the "fizikciler.py" on your local ma
 - Pygame module
 
 And that's it! 
+
+### Screenshots
+Character Selection Screen:
+![firstScreen](/screenshots/firstScreen.png)
+
+Quick Tutorial Screen:
+![tutorial](/screenshots/tutorial.png)
+
+Game Screen:
+![gameScreen](/screenshots/gameScreen.png)
+
+You passed the round!:
+![passedRound](/screenshots/youWon.png)
+
+Game Over:
+![firstScreen](/screenshots/gameOverScreen.png)
