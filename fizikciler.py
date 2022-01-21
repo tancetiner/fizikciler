@@ -2,11 +2,12 @@ import pygame
 import sys
 import random as rd
 from pygame import transform
+import tkinter as tk
 
+root = tk.Tk()
 
 # defining constant numbers
-WIDTH = 1200
-HEIGHT = 775
+SCREEN_SIZE = WIDTH, HEIGHT = (root.winfo_screenwidth(), root.winfo_screenheight())
 FPS = 60
 BLUE = (51, 153, 255)
 WHITE = (255, 255, 255)
@@ -37,68 +38,68 @@ records = [0]
 
 
 # loading the images
-WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+WIN = pygame.display.set_mode(SCREEN_SIZE, pygame.FULLSCREEN)
 
 TAN_KAFA = pygame.transform.scale(
-    pygame.image.load("./documents/tan.png"), (TAN_KAFA_WIDTH, TAN_KAFA_HEIGHT),
+    pygame.image.load("./assets/tan.png"), (TAN_KAFA_WIDTH, TAN_KAFA_HEIGHT),
 )
 
 PAMIR_KAFA = pygame.transform.scale(
-    pygame.image.load("./documents/pamir.png"), (PAMIR_KAFA_WIDTH, PAMIR_KAFA_HEIGHT),
+    pygame.image.load("./assets/pamir.png"), (PAMIR_KAFA_WIDTH, PAMIR_KAFA_HEIGHT),
 )
 
 PAMIR_KAFA_FLIPPED = pygame.transform.flip(PAMIR_KAFA, True, False)
 
 YAGIZ1 = pygame.transform.scale(
-    pygame.image.load("./documents/ataturk.png"), (YAGIZ_WIDTH, YAGIZ_HEIGHT),
+    pygame.image.load("./assets/ataturk.png"), (YAGIZ_WIDTH, YAGIZ_HEIGHT),
 )
 
 YAGIZ2 = pygame.transform.scale(
-    pygame.image.load("./documents/yagiz.png"), (YAGIZ_WIDTH, YAGIZ_HEIGHT),
+    pygame.image.load("./assets/yagiz.png"), (YAGIZ_WIDTH, YAGIZ_HEIGHT),
 )
 
 TANC1 = pygame.transform.scale(
-    pygame.image.load("./documents/asiyan.png"), (TANC1_WIDTH, TANC1_HEIGHT),
+    pygame.image.load("./assets/asiyan.png"), (TANC1_WIDTH, TANC1_HEIGHT),
 )
 
 TANC2 = pygame.transform.scale(
-    pygame.image.load("./documents/ceto.png"), (TANC2_WIDTH, TANC1_HEIGHT),
+    pygame.image.load("./assets/ceto.png"), (TANC2_WIDTH, TANC1_HEIGHT),
 )
 
 CAN1 = pygame.transform.scale(
-    pygame.image.load("./documents/can.png"), (CAN1_WIDTH, TANC1_HEIGHT),
+    pygame.image.load("./assets/can.png"), (CAN1_WIDTH, TANC1_HEIGHT),
 )
 
 CAN2 = pygame.transform.scale(
-    pygame.image.load("./documents/can2.png"), (CAN2_WIDTH, TANC1_HEIGHT),
+    pygame.image.load("./assets/can2.png"), (CAN2_WIDTH, TANC1_HEIGHT),
 )
 
 TANG = pygame.transform.scale(
-    pygame.image.load("./documents/tanG.png"), (PAMIR_KAFA_WIDTH, TANC1_HEIGHT),
+    pygame.image.load("./assets/tanG.png"), (PAMIR_KAFA_WIDTH, TANC1_HEIGHT),
 )
 
 THEATER2 = pygame.transform.scale(
-    pygame.image.load("./documents/theater1.jpeg"), (WIDTH, HEIGHT),
+    pygame.image.load("./assets/theater1.jpeg"), (WIDTH, HEIGHT),
 )
 
 THEATER1 = pygame.transform.scale(
-    pygame.image.load("./documents/theater2.jpeg"), (WIDTH, HEIGHT),
+    pygame.image.load("./assets/theater2.jpeg"), (WIDTH, HEIGHT),
 )
 
 DARK_BACKGROUND = pygame.transform.scale(
-    pygame.image.load("./documents/dark_background.jpeg"), (WIDTH, HEIGHT),
+    pygame.image.load("./assets/dark_background.jpeg"), (WIDTH, HEIGHT),
 )
 
 LIGHT_BACKGROUND = pygame.transform.scale(
-    pygame.image.load("./documents/light.jpeg"), (WIDTH, HEIGHT),
+    pygame.image.load("./assets/light.jpeg"), (WIDTH, HEIGHT),
 )
 
 FEDAILER = pygame.transform.scale(
-    pygame.image.load("./documents/fedailer.jpeg"), (638, 638),
+    pygame.image.load("./assets/fedailer.jpeg"), (638, 638),
 )
 
 FIZIKCILER = pygame.transform.scale(
-    pygame.image.load("./documents/fizikciler.jpeg"), (577, 469),
+    pygame.image.load("./assets/fizikciler.jpeg"), (577, 469),
 )
 # --------------------------
 
@@ -119,14 +120,14 @@ friend_faces_original = [
 
 # loading sound effects and creating the list stores them
 pygame.mixer.init()
-BACKGROUND_MUSIC = pygame.mixer.Sound("./documents/background_music.mp3")
-tan_ses = pygame.mixer.Sound("./documents/tan_ses2.mp3")
-yagiz_ses = pygame.mixer.Sound("./documents/yagiz_ses.mp3")
-can_ses = pygame.mixer.Sound("./documents/can_ses.mp3")
-tang_ses = pygame.mixer.Sound("./documents/tang_ses.mp3")
-entry_music = pygame.mixer.Sound("./documents/rhayader.mp3")
-bad_ending_music = pygame.mixer.Sound("./documents/led.mp3")
-good_ending_music = pygame.mixer.Sound("./documents/chord.mp3")
+BACKGROUND_MUSIC = pygame.mixer.Sound("./assets/background_music.mp3")
+tan_ses = pygame.mixer.Sound("./assets/tan_ses2.mp3")
+yagiz_ses = pygame.mixer.Sound("./assets/yagiz_ses.mp3")
+can_ses = pygame.mixer.Sound("./assets/can_ses.mp3")
+tang_ses = pygame.mixer.Sound("./assets/tang_ses.mp3")
+entry_music = pygame.mixer.Sound("./assets/rhayader.mp3")
+bad_ending_music = pygame.mixer.Sound("./assets/led.mp3")
+good_ending_music = pygame.mixer.Sound("./assets/chord.mp3")
 pygame.mixer.Sound.set_volume(BACKGROUND_MUSIC, 0.1)
 pygame.mixer.Sound.set_volume(tan_ses, 0.6)
 pygame.mixer.Sound.set_volume(yagiz_ses, 0.3)
